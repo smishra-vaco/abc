@@ -10,20 +10,20 @@ export default class Counter extends PureComponent {
     };
   }
 
+  handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  handleDecrement = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+
   render() {
-    const handleIncrement = () => {
-      this.setState({ count: this.state.count + 1 });
-    };
-
-    const handleDecrement = () => {
-      this.setState({ count: this.state.count - 1 });
-    };
-
     return (
       <div>
-        <Button clickHandler={handleDecrement} symbol={"-"} />
+        <Button clickHandler={this.handleDecrement} symbol={"-"} />
         <Count countValue={this.state.count} />
-        <Button clickHandler={handleIncrement} symbol={"+"} />
+        <Button clickHandler={this.handleIncrement} symbol={"+"} />
       </div>
     );
   }
