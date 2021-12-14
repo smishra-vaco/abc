@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Button from "./Button";
 import Count from "./Count";
 
-export default class Counter extends Component {
+export default class Counter extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
