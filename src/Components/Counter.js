@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Button from "./Button";
+import Count from "./Count";
 
 export default class Counter extends Component {
   constructor(props) {
@@ -18,11 +20,11 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <>
-        <button onClick={this.handleDecrement}>-</button>
-        <span>{this.state.count}</span>
-        <button onClick={this.handleIncrement}>+</button>
-      </>
+      <div>
+        <Button clickHandler={this.handleDecrement} symbol={"-"} />
+        <Count countValue={this.state.count} />
+        <Button clickHandler={this.handleIncrement} symbol={"+"} />
+      </div>
     );
   }
 }
